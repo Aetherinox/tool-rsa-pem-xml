@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSA PEM TO XML - RSAKeyConverter</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/site.css" />
+
+    <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
+<script>(window.jQuery||document.write("\u003Cscript src=\u0022/lib/jquery/dist/jquery.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\u0022\u003E\u003C/script\u003E"));</script>
+
+    <link href="../cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="../cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <link href="js/HoldOn.min.css" rel="stylesheet" />
+    <script src="js/HoldOn.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="Privacy.html">RSAKeyConverter</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" onclick="Submit()" href="index.html">Create XML Key</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="XmlToPem.html">XML to PEM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="PemToXml.html">PEM to XML</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            
+<div class="text-center">
+    <h1 class="display-4">XML To PEM</h1>
+
+
+    <div class="col-12 text-left">
+
+        <span id="basic-addon1">RSA Private or Public PEM Key : </span>
+        <div>
+            <form method="post">
+                <textarea class="col-12" rows="20" name="pemdata"></textarea>
+
+                <div class="text-right">
+                    <button type="submit" class="btn bg-danger" style="color:white" onclick="Submit()" formaction="/PemToXml?handler=ConvertXML">Convert</button>
+                </div>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8E7mvwKuXeNAs10oZLhiJ7r1vRaLer0YR0ZGja-7Te6kuPeL5XPJ7wAOCjwcvuI30CPUVYvzKZJBp_avAUJE6bjaQ1N68VrbmoebotliPNakR1weqPgmTEnzVrghz2GNRmCUZXMWeBgRe30Xj7TuJZg" /></form>
+        </div>
+    </div>
+
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1">Convert To XML Result : </span>
+        <div>
+            <textarea class="col-12" rows="20"></textarea>
+        </div>
+    </div>
+
+    
+    
+
+    
+</div>
+
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - RSAKeyConverter - <a href="Privacy.html">About</a>
+        </div>
+    </footer>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site519a.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18"></script>
+
+    <script>
+
+        var options = {
+            theme: "sk-cube-grid",
+            message: 'Computing..',
+            backgroundColor: "#000000",
+            textColor: "white"
+        };
+
+
+    </script>
+
+    <script>
+
+        function Submit() {
+            HoldOn.open(options);
+        }
+    </script>
+
+
+    
+</body>
+
+</html>

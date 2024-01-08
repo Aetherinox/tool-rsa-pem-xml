@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create RSA XML Key - RSAKeyConverter</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/site.css" />
+
+    <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
+<script>(window.jQuery||document.write("\u003Cscript src=\u0022/lib/jquery/dist/jquery.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\u0022\u003E\u003C/script\u003E"));</script>
+
+    <link href="../cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="../cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <link href="js/HoldOn.min.css" rel="stylesheet" />
+    <script src="js/HoldOn.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="Privacy.html">RSAKeyConverter</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" onclick="Submit()" href="index.html">Create XML Key</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="XmlToPem.html">XML to PEM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="PemToXml.html">PEM to XML</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            
+<div class="text-center">
+    <h1 class="display-4">Create RSA XML Key</h1>
+    <p>
+
+        <div class="col-12 text-left">
+
+            <span id="basic-addon1">Public Key XML : </span>
+            <div>
+                <textarea class="col-12" rows="10"><RSAKeyValue><Modulus>xomHzxLgdipB/ll2EAChHGu/79/OxP+2kfXWlOj2erX/sAC0pPsdwDXaUcS6Zqt2Y1ZPDYiGjyJDBEd+xEfHeIs1N7OUtAgdWm57Iv8NZ1QCWpNy/gG64YtK+NbORgKDU5H5GfUD8ufJPr6rzyDKILmfM5akMsRVHUObRGctAKj7mA6PnLAaM3VGd00RmACg2jLFHzytH2ENzt/7ruLjAPf6iRYBBfPzAf5fZgIOTRbSsLPxtpROhJYqxHg/1WlIXDPvhZg3XeVeMR5NDFXPf1LXtM5Y32lFT8TfKPJ0hmD4QlYEUwYFq4HJSt3aBkJgP2oLFgo+3snbNBKbxNBNWQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></textarea>
+            </div>
+        </div>
+        <hr />
+        <div class="col-12 text-left">
+
+            <span id="basic-addon1">Private Key XML : </span>
+            <div>
+                <textarea class="col-12" rows="20"><RSAKeyValue><Modulus>xomHzxLgdipB/ll2EAChHGu/79/OxP+2kfXWlOj2erX/sAC0pPsdwDXaUcS6Zqt2Y1ZPDYiGjyJDBEd+xEfHeIs1N7OUtAgdWm57Iv8NZ1QCWpNy/gG64YtK+NbORgKDU5H5GfUD8ufJPr6rzyDKILmfM5akMsRVHUObRGctAKj7mA6PnLAaM3VGd00RmACg2jLFHzytH2ENzt/7ruLjAPf6iRYBBfPzAf5fZgIOTRbSsLPxtpROhJYqxHg/1WlIXDPvhZg3XeVeMR5NDFXPf1LXtM5Y32lFT8TfKPJ0hmD4QlYEUwYFq4HJSt3aBkJgP2oLFgo+3snbNBKbxNBNWQ==</Modulus><Exponent>AQAB</Exponent><P>67W45mQ+Y9hahZ3iIji7fap1gw4WmYNuHBOOHVPA4oWqOtFk07Ie/dxZirSadGpFX1w7O5eRXwVBHdj3IA7VhH9Ry4T8E56ZJ5oaYGHhbsPDZFZvvQ1oZPOn1Vtx/2jCkEWY7wFRn4NMWt8e097CAARaDGQ433mPDQz4xR3yEB0=</P><Q>16ClBmZfxMw73amdFtLJSAoPuc5dF/g+Y89Ad2VKFRb+NnAzD8tl3aMucwiXT+IaCeRjJWipPQbkZjl0Lg5AaXdq6CZfcJ9Z4kcdrRYRJE+Y3lkLi5qUJTwleHuegQQ/TGKzDyYu00TW+PzWKGrDpWMeVF2J2THt2LO/m/C0ZW0=</Q><DP>FQEMiPtF0//jkSSQkhwcGQankhYfTW640Ses8lAUUBs5ICSop3Sn7ldEY2fUm6sco3LElHrdKWp+cvpyixjHThdKYqhnDhiD7VN+JjiSrhwjvT02l9IqC1TrD8gmUGw1akXJawLjEyPQGgjn5lljUD0TCSelKcTbSn5tbKNOfsE=</DP><DQ>f8OABLrEJCefkUfe/JcJDNZpWv8byggdb6Zt3FD4BGcLWdZBayppwVnfO+nrPjoKk7HvzUqmfLKIwsloPaHUKKnJfqS+CE1jROA+hUB+B7XiLl00qhN9lFJ/IVSeJnQNzYTt9Bv7wtMXTZEClBAuvOBuKC8Ebt1WwQBAmHWXbkE=</DQ><InverseQ>2itNP2QV4FYSvBspP5VbSpkwR0+7bFYrtcQ8/Ni5rtrlLyKv8eiPQuCqfK8kTqH/Mm90Ty0ZxdFZbuTsx3gnIlwFPND2upBsabHc1AjQRxKbdc9wuR/1ytrfLeP4RHaW3gthXCd+zXP0YA9/MNB9CEw95SvF2ngAQep3AeEPYMg=</InverseQ><D>JBNUgquO7tnR4QpXeiPrIpNvroIv+7rtbUtLAQbt1rFgcxZFvN7Gcqk2cPo61rIcUoOZ3L8smDClFc95+OeEFuLQujze7fG1h7ugk2TeBiMNRHEbiY097ILXjizWEYGeZF6XcYCEhaxZdJXH+Vyfbd/czk52qqTjRGyG96B53G8GOWWDyIErMAdPJ94TFb/hu9By/JOxqfcCfN1SpKRl6PXM35lKe4KYNoQVTcv/Tm8FcTDx+TiGRf1ORPc2KwS2Xc6TKR4zfEAX0ubnMarwjTuiq3OC9FdFD1N4a/UPWlbeWJius1TTso3078DPnd57YwbOKP9QIt0+koXYOkaTKQ==</D></RSAKeyValue></textarea>
+            </div>
+        </div>
+    </p>
+</div>
+
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - RSAKeyConverter - <a href="Privacy.html">About</a>
+        </div>
+    </footer>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site519a.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18"></script>
+
+    <script>
+
+        var options = {
+            theme: "sk-cube-grid",
+            message: 'Computing..',
+            backgroundColor: "#000000",
+            textColor: "white"
+        };
+
+
+    </script>
+
+    <script>
+
+        function Submit() {
+            HoldOn.open(options);
+        }
+    </script>
+
+
+    
+</body>
+
+</html>
